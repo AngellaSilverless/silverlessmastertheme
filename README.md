@@ -1,2 +1,0 @@
-# silverlessmastertheme
-Silverless Master Theme
