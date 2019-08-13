@@ -2,7 +2,7 @@
 /**
  * ============== Template Name: Terms and Privacy
  *
- * @package silverlessmastertheme
+ * @package oke
  */
 get_header();?>
 

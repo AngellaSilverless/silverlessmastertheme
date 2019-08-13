@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages
  *
- * @package silverlessmastertheme
+ * @package oke
  */
 
 get_header(); ?>

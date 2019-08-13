@@ -1998,13 +1998,13 @@ polygon#nepal {
   height: 30px;
 }
 
-.logo-holder #silverlessmastertheme {
+.logo-holder #oke {
   opacity: 0.6;
   -webkit-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
 }
 
-.logo-holder #silverlessmastertheme path {
+.logo-holder #oke path {
   fill: #cd381d;
 }
 
@@ -2026,7 +2026,7 @@ polygon#nepal {
   cursor: pointer;
 }
 
-.logo-holder:hover #silverlessmastertheme {
+.logo-holder:hover #oke {
   opacity: 0.8;
 }
 

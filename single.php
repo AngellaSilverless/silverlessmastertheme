@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts
  *
- * @package silverlessmastertheme
+ * @package oke
  */
 get_header(); ?>
 

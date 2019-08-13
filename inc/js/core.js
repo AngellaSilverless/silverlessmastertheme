@@ -31,7 +31,7 @@ jQuery(document).ready(function( $ ) {
         
 		var map = new mapboxgl.Map({
 		    container:  'bell-map-contact',
-		    style:      'mapbox://styles/silverless/cjvnw465y0bl91cmionu5nqmo',
+		    style:      'mapbox://styles/oke/cjvnw465y0bl91cmionu5nqmo',
 		    center:     points.geometry.coordinates,
 		    zoom:       11,
 		    scrollZoom: false

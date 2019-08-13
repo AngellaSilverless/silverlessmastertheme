@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package silverlessmastertheme
+ * @package oke
  */
 get_header();?>
 

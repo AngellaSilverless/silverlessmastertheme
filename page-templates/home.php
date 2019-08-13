@@ -2,7 +2,7 @@
 /**
  * ============== Template Name: Home Page
  *
- * @package silverlessmastertheme
+ * @package oke
  */
 get_header();?>
 
