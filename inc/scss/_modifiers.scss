@@ -34,7 +34,7 @@ $height: (0, 25, 50, 75, 100); // Amount string.
 
 @each $amount in $height {
     .h#{$amount} {
-        height: #{$amount}vh;
+        min-height: #{$amount}vh;
     }
 }
 

@@ -13,13 +13,13 @@
 	
 	<div class="socket">
 	
-		<div class="container cols-4">
+		<div class="container cols-8">
 			
-			<div class="col colophon">&copy; oke Master Theme <?php echo date ('Y');?></div>
+			<div class="col colophon">&copy; Okavango Delta Explorations <?php echo date ('Y');?></div>
 			
 			<div class="col oke">
 				
-				<a href="https://oke.co.uk"><?php get_template_part('inc/img/oke', 'logo');?></a>
+				<a href="https://silverless.co.uk"><?php get_template_part('inc/img/silverless', 'logo');?></a>
 				
 			</div>
 			

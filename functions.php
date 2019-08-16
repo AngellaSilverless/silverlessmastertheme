@@ -48,6 +48,10 @@ function oke_custom_menu() {
 	register_nav_menus(array(
 		'main-menu' => __( 'Main Menu' )
 	));
+	
+	register_nav_menus(array(
+		'secondary-menu' => __( 'Secondary Menu' )
+	));
 }
 
 function oke_dashboard_widget() {
@@ -61,16 +65,16 @@ function oke_dashboard_help() {
 
 function oke_custom_fonts() {
 	echo '<style type="text/css">' . file_get_contents(__DIR__ . "/admin-settings/style-admin.css") . '</style>';
-	
-	if(function_exists('acf_add_options_page')) {
-		acf_add_options_page(array(
-			'page_title' 	=> 'Theme Settings',
-			'menu_title'	=> 'Theme Settings',
-			'menu_slug' 	=> 'site-general-settings',
-			'capability'	=> 'edit_posts',
-			'redirect'		=> false
-		));
-	}
+}
+
+if(function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'site-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
 }
  
 function oke_remove_menus(){

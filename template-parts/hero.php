@@ -12,22 +12,28 @@ if( get_field('hero_type') !== 'slider'):
 
 <div class="hero <?php the_field('hero_height');?>" style="background-image: url(<?php echo $heroImage['url']; ?>); background-color: <?php echo $heroColor; ?>;">
 
-	<div class="container">
-		
-		<div class="hero__content">
-		
-			<?php $brandImage = get_field('logo', 'options');?>
-			
-			<a href="<?php echo home_url(); ?>" alt="<?php wp_title(''); ?>" title="<?php wp_title(''); ?>" class="logo"><?php
-				
-				get_template_part('template-parts/logo');
-			
-			?></a>
-		
-			<h1 class="heading heading__xl slow-fade"><?php the_field('hero_heading');?></h1>
-		
+    <div class="container cols-3-12-6-3">
+        <div class="col"></div>		
+		<div class="col">
+		    <div class="hero__content">
+                <div class="inner-section">
+                    <h1 class="heading heading__md mt0 mb0"><em><?php the_field('hero_copy');?></em></h1>
+                </div>
+                <div class="inner-section">
+                    <?php get_template_part('inc/img/ode', 'logo-top');?>
+                    <?php get_template_part('inc/img/ode', 'logo-bottom');?>
+                </div>          
+                <div class="inner-section">
+                    <h2 class="heading heading__lg mt0 mb0 slow-fade"><em>
+                        <?php the_field('hero_heading');?></em>
+                    </h2>
+                </div>   
+               <div class="buttons">
+                   <a href="">Explore Now</a>
+                   <a href="">Enquire</a>
+               </div>
+		    </div>
 		</div>
-	
 	</div>
 
 </div><!--hero-->

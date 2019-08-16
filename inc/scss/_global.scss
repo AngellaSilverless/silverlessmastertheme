@@ -19,7 +19,7 @@ body {
     font-family: $body-font;
     font-size: 14px;
     font-weight: 200;
-    background: hsl(0, 0%, 96%);
+    background: $body-bg;
     color: hsl(0, 0%, 41%);
 }
 
@@ -104,8 +104,9 @@ img {
 }
 
 .heading {
+    margin: 0;
     font-family: $brand-font;
-    font-weight: 100;    
+    font-weight: 300;
     
     &__alt {
         font-family: $supporting-font;        
@@ -159,11 +160,10 @@ img {
     
     &__xl {
         font-size: 4em;
-        line-height: 1em;
     }
     
     &__lg {      
-        font-size: 3em;
+        font-size: 2.5em;
     }  
     
     &__md {
@@ -171,8 +171,7 @@ img {
     }   
     
     &__sm {
-        font-size: 1.2em;   
-        letter-spacing: 2px;
+        font-size: 1.2em;
     }
     
     &__xs {
@@ -207,20 +206,92 @@ select:focus {
 
 header {
     position: fixed;
-    display: grid;
     width: 100%;
+    font-family: $body-font;
+    background:$brand-primary;
     z-index: 1000;
+    transition: all 0.5s ease;
+    
+    a {
+        color: white;
+    }
+    
+    .logo {
+        position: relative;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        z-index: 999;
+        
+        a {
+            height: 100%;
+            width: 100%;
+            padding:1em 1.5em 1em 0;
+        }
+    }
+    
+    svg {
+        position: relative;
+        display: block;
+        width:100%;
+        overflow: hidden;
+        margin-top:0;
+        transition: margin-top 0.5s ease;        
+        
+        &:first-of-type {
+            width:65%;
+            margin-bottom: 0.5em;
+            z-index: 100;
+            transition: width 0.5s ease;
+        }
+
+        &:last-of-type {
+            z-index: 10;
+            max-height: 3em;
+            transition: opacity 0.5s ease, max-height 0.5s ease;
+            opacity:1;
+        }
+        
+        .st0 {
+            fill:white;
+        }
+    }
+
+    .contact {
+        display: grid;
+        width: 100%;
+        height: calc(100% - 2em);
+        padding: 0.5em 2em;
+        margin: 1em 0;
+        border-right: 1px solid white;
+        text-align: right;
+        transition: padding-top 1s ease;
+        
+        a:nth-of-type(2) {
+            align-self: flex-end;
+            padding-bottom: 0.25em;
+            font-weight: 600;
+        }
+    }
+
+    .search {
+        display: grid;
+        height: 100%;
+        align-items: center;
+        color: white;
+        font-size: 1.5em;
+    }
+    
 }
 
 nav {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 200;
+    display: grid;
 	width: 100%;
-	background: $brand-primary;
-	color: white;
-	padding: 1em;
+    height: calc(100% - 2em);
+	padding:0 3em;
+	margin:1em 0;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
 	
 	.menu-trigger {
 		cursor: pointer;
@@ -234,24 +305,31 @@ nav {
 	}
 
 	ul {
+        display: grid;
+        justify-content: space-between;
+        grid-auto-flow: column;
+        grid-template-rows: 1fr;
+        grid-template-columns: auto;
 		list-style: none;
 		padding: 0;
-		font-family: $brand-font;
+		margin:0;
 		font-weight: 100;
-		letter-spacing: 2px;
-		transition: margin 1s ease;
+		letter-spacing: 1px;
 	
 		li {
     		position: relative;
+    		display: inline-block;
 			padding:0;
 			color: white;
 		
 			a {
 			    display: block;
-			    padding: 0.25em 0;
+			    padding: 0;
 			    color: white;
-			    line-height: 1.5em;
+			    line-height: 1em;
 				transition: color 1s ease;
+				text-transform: uppercase;
+				font-weight: 600;
 			}
 			
 			&.current-menu-item:before {
@@ -277,6 +355,24 @@ nav {
 	}
 }
 
+.secondaryMenu {
+        padding-top: 0.75em;
+
+        ul {
+        justify-content: flex-start;
+    
+        li {
+            margin-right: 4em;
+            
+            a {
+                font-weight: 100;
+                text-transform: none;
+                letter-spacing: 0;
+            }
+        }
+    }
+}
+
 .brand {
     position: absolute;
     top:2em;
@@ -291,19 +387,11 @@ nav {
 
 .mainMenu {
 	width: 100%;
+	padding-bottom: 0.75em;
+	align-self: flex-end;
 	text-align: center;
 	z-index: 50;
-}
-
-.page-template-home {
-	
-	.hero {
-		align-items: center;
-		
-		h3 {
-			text-align: center;
-		}
-	}
+	transition: all 0.5s ease;
 }
 
 .pagination {
@@ -327,6 +415,36 @@ nav {
 			background: $brand-mid-grey;
 		}
 	}
+}
+
+.scrolled header {
+    background:$brand-secondary;
+}
+
+.scrolled .secondaryMenu,
+.scrolled .contact a:nth-of-type(2)  {
+    max-height: 0;
+    opacity:0;
+}
+
+.scrolled header #logo-bottom {
+    max-height: 0;
+    opacity:0;
+                transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.scrolled header #logo-top {
+    width:100%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.scrolled .mainMenu {
+    padding-bottom: 1em;
+}
+
+.scrolled .contact {
+    padding-top:1em;
 }
 
 /*===========FOOTER==========*/
@@ -361,9 +479,13 @@ footer {
 	
 	.socket {
 		letter-spacing: 1px;
-		background: $brand-dark-grey;
-		color: $brand-tertiary;
+		background: $brand-primary;
+		color: white;
 		padding: 1em;
+		
+		a {
+    		color: white;
+		}
 		
 		.colophon, .mandatory {
 			font-size: 0.9em;

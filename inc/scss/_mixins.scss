@@ -81,3 +81,7 @@
 @mixin darkCircularGradient {
     background: radial-gradient(ellipse at center, hsl(0, 0%, 60%) 0%,hsl(0, 0%, 19%) 100%);
 }
+
+@mixin brandBorder {
+    border: 1px solid $brand-primary;
+}
