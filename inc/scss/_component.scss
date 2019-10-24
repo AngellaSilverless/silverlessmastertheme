@@ -2,19 +2,16 @@
 
 .button {
     position: relative;
-    display: inline-block;
+    display: block;
     margin: 0;
-    padding: 0.75em 1em;
     color: $brand-mid-grey;
     background: white;
-    text-transform: uppercase;
-    text-align: left;
-    font-family: $body-font;
+    text-align: left; 
+    font-family: $brand-font;
     font-weight: 400;
     vertical-align: middle;
     -webkit-appearance: none;
     border-radius: 0;
-    letter-spacing: 1px;
     transition: all 0.5s ease;
     text-rendering: geometricPrecision; /*fix rendering issues on different buttons*/
     cursor: pointer;
@@ -22,39 +19,39 @@
     &:hover {
         background: $brand-light-grey;
     }
-    
-    i {
-        position: absolute;
-        right: 0.25em;
-        top: 0.75em;
-        font-size: 1.25em;
+
+    &__standard {
+        padding: 1em 2em;
+        font-style:italic;
+        background: $brand-primary;
+        color: white;
+        &--fixed-width {
+            width: 20em;
+        }
     }
-    
-    span {
-        display: block;
-        font-weight: 200;
-        text-transform: none;
-        font-style: italic;
-        font-size: 1.2em;
-    }
-	
-	
-	&__dark {
-		background: $brand-mid-grey;
-		color: white;
-		padding: 0.75em 3em;
-		
-		&:hover {
-			background: darken($brand-mid-grey, 10%);
-			color: white;
-		}
-	}
-	
-	&__transparent {
-		background: transparent;
-		color: $brand-mid-grey;
-		border: 1px solid $brand-mid-grey;
-	}
+    &__large {
+        padding: 1em 2em;
+        text-transform: uppercase;
+        background: $brand-secondary;
+        color: white;
+        &.centered {
+            display: inline-block;
+            text-align: center;
+        }
+        span {
+            display: block;
+            font-style:italic;
+            text-transform: none;
+            margin-bottom: 0.5em;
+        }
+        &--fixed-width {
+            width: 20em;
+        }
+    }    
+}
+
+p + .button {
+    margin-top: 2em;
 }
 
 a.next-section {

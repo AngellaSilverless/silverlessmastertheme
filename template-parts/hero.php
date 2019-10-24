@@ -17,14 +17,14 @@ if( get_field('hero_type') !== 'slider'):
 		<div class="col">
 		    <div class="hero__content">
                 <div class="inner-section">
-                    <h1 class="heading heading__md mt0 mb0"><em><?php the_field('hero_copy');?></em></h1>
+                    <h1 class="heading heading__md heading__light mt0 mb0"><em><?php the_field('hero_copy');?></em></h1>
                 </div>
                 <div class="inner-section">
                     <?php get_template_part('inc/img/ode', 'logo-top');?>
                     <?php get_template_part('inc/img/ode', 'logo-bottom');?>
                 </div>          
                 <div class="inner-section">
-                    <h2 class="heading heading__lg mt0 mb0 slow-fade"><em>
+                    <h2 class="heading heading__lg heading__light mt0 mb0 slow-fade"><em>
                         <?php the_field('hero_heading');?></em>
                     </h2>
                 </div>   

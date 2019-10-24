@@ -5,8 +5,10 @@
     grid-template-columns: repeat($col-count, 1fr);
     grid-gap: $grid-gap;
     max-width: $container-width;
-    margin: 0 auto;
-    padding: 0 1em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right:0; 
 
     &.fullwidth {
         max-width: none;
@@ -194,6 +196,14 @@
         }   
     }
 
+    &.cols-16-8 {
+        >.col:nth-of-type(2n -1) {
+            grid-column: span 16;     
+        }       
+        >.col:nth-of-type(2n) {
+            grid-column: span 8;     
+        }   
+    }
     
 }
 /*===========MEDIA QUERIES==========*/

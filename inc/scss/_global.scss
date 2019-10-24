@@ -5,7 +5,7 @@
 }
 
 html {
-    font-size: 18px;
+
 }
  
 html,
@@ -74,9 +74,15 @@ main {
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 200;  
-    line-height: 1.5em
+    line-height: 1.6em;
+    
+    &.brand-font {
+    font-size: 1.2em;
+    font-family: $brand-font;
+    color: $brand-primary;
+    }
 }
 
 a {
@@ -103,11 +109,17 @@ img {
     height: auto;
 }
 
+ul {
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+
 .heading {
     margin: 0;
     font-family: $brand-font;
     font-weight: 300;
-    
+    color: $brand-primary;
     &__alt {
         font-family: $supporting-font;        
     }
@@ -125,7 +137,7 @@ img {
     }
     
     &__alt-color {
-      color: $brand-dark-grey;
+      color: $brand-primary-light;
     }
     
     &__seperator {
@@ -178,7 +190,13 @@ img {
         font-size: 0.75em;        
         color: $brand-mid-grey;
     }   
-
+    sup {
+        vertical-align: text-top;
+        font-style: italic;
+        span {
+            display: block;
+        }
+    }
 }
 
 [type=button], 
@@ -362,7 +380,7 @@ nav {
         justify-content: flex-start;
     
         li {
-            margin-right: 4em;
+            margin-right: 3em;
             
             a {
                 font-weight: 100;

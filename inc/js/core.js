@@ -7,7 +7,6 @@ jQuery(document).ready(function( $ ) {
 
     $("html").delay(1500).queue(function(next) {
         $(this).addClass("loaded");
-
         next();
     });
  
@@ -77,27 +76,7 @@ jQuery(document).ready(function( $ ) {
  
 // GLOBAL OWL CAROUSEL SETTINGS
 
-    $('.owl-carousel').owlCarousel({
-        loop:true,
-        autoplay:false,
-        autoplayHoverPause:true,
-        nav:true,
-    	    navClass: ['owl-prev', 'owl-next'],
-        responsive:{
-            0:{
-                items: 1
-            },
-            768: {
-	            items: 2
-            },
-            992:{
-                items: 3
-            },
-            1200: {
-	            items: 4
-            }
-        }
-    });
+
 
 /* CLASS AND FOCUS ON CLICK */
     
@@ -110,6 +89,11 @@ jQuery(document).ready(function( $ ) {
     $(".read-more").click(function() {
 	    $(this).prev().slideToggle();
 	    $(this).text($(this).text() == "Read more" ? "Read less" : "Read more");
+    });
+
+    $(".tab-trigger").click(function() {    
+	    $(".tab-trigger.active").removeClass("active");
+	    $(this).addClass('active');
     });
 
 // ========== Add class if in viewport on page load
@@ -158,5 +142,48 @@ jQuery(document).ready(function( $ ) {
 		});
 	    
 	});
+
+// ========== Tab Slider
+
+var action = false, clicked = false;
+var Owl = {
+
+    init: function() {
+      Owl.carousel();
+    },
+
+	carousel: function() {
+		var owl;
+		$(document).ready(function() {
+			
+			owl = $('.tabs').owlCarousel({
+				items 	 : 1,
+				center	   : true, 
+				nav        : false,
+				dots       : true,
+				loop       : true,
+				margin     : 10,
+				dotsContainer: '.test',
+				navText: ['prev','next'],
+			});
+
+			  $('.owl-next').on('click',function(){
+			  	action = 'next';
+			  });
+
+			  $('.owl-prev').on('click',function(){
+			  	action = 'prev';
+			  });
+
+			 $('.tabs-header').on('click', 'li', function(e) {
+			    owl.trigger('to.owl.carousel', [$(this).index(), 300]);
+			  });
+		});
+	}
+};
+
+$(document).ready(function() {
+  Owl.init();
+});
 
 });//Don't remove ---- end of jQuery wrapper

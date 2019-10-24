@@ -83,5 +83,13 @@
 }
 
 @mixin brandBorder {
-    border: 1px solid $brand-primary;
+    border: $brandBorderWidth $brandBorderColor $brandBorderStyle;
+}
+
+@mixin brandBorderRight {
+    border-right: $brandBorderWidth $brandBorderColor $brandBorderStyle;
+}
+
+@mixin brandBorderBottom {
+    border-bottom: $brandBorderWidth $brandBorderColor $brandBorderStyle;
 }

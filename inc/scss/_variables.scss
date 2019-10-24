@@ -1,9 +1,9 @@
 /*! == VARIABLES == */
 
-$brand-primary: hsl(73, 11%, 51%);
-$brand-primary-light: hsl(73, 11%, 75%);
-$brand-primary-dark: hsl(73, 11%, 30%);
-$brand-secondary: hsl(227, 31%, 18%);
+$brand-primary: hsl(73, 11%, 51%); //Mid Green
+$brand-primary-light: hsl(73, 11%, 75%); // Light Green
+$brand-primary-dark: hsl(73, 11%, 30%); //Dark Green
+$brand-secondary: hsl(227, 31%, 18%); //Dark Blue
 $brand-tertiary: hsl(37, 100%, 50%);
 $brand-light-grey: hsl(0, 0%, 80%);
 $brand-mid-grey: hsl(0, 0%, 50%);
@@ -13,14 +13,14 @@ $body-bg: hsl(60, 9%, 89%);
 
 $brand-font: 'mauritius', serif;
 $body-font: 'zeitung-micro', sans-serif;
-$supporting-font: 'zeitung-micro', sans-serif;
+$supporting-font: 'zeitung-micro', sans-serif; 
 
 $fastEffect: all .5s ease;
 $slowEffect: all 1s ease;
 
 $container-width: 1400px;
 $col-count: 24;
-$grid-gap: 1.5em;
+$grid-gap: 0;
 
 $breakpoints: (
 	xl: 1200px,
@@ -30,4 +30,9 @@ $breakpoints: (
 	xs: 350px
 );
 
+$brandBorderWidth:1px;
+$brandBorderColor:$brand-primary;
+$brandBorderStyle: solid;
+
+$contentPadding: 2em 3em;
 
