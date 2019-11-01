@@ -139,6 +139,9 @@ ul {
     &__alt-color {
       color: $brand-primary-light;
     }
+    &__emphasis {
+        font-style: italic;
+    }
     
     &__seperator {
         position: relative;
@@ -187,8 +190,7 @@ ul {
     }
     
     &__xs {
-        font-size: 0.75em;        
-        color: $brand-mid-grey;
+        font-size: 1em;        
     }   
     sup {
         vertical-align: text-top;
@@ -229,7 +231,8 @@ header {
     background:$brand-primary;
     z-index: 1000;
     transition: all 0.5s ease;
-    
+    padding-left: 1em;
+    padding-right: 1em;    
     a {
         color: white;
     }
@@ -298,6 +301,8 @@ header {
         align-items: center;
         color: white;
         font-size: 1.5em;
+        padding-left:1em;
+        padding-right: 1em;
     }
     
 }

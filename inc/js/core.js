@@ -12,7 +12,7 @@ jQuery(document).ready(function( $ ) {
  
 //Smooth Scroll
 
-    $('nav a, a.button, a.next-section').click(function(){
+    $('nav a, a.button, a.next-section, a.explore').click(function(){
 	    if($(this).attr('href') != "#") {
 	        $('html, body').animate({
 	            scrollTop: $( $(this).attr('href') ).offset().top -100
@@ -95,7 +95,17 @@ jQuery(document).ready(function( $ ) {
 	    $(".tab-trigger.active").removeClass("active");
 	    $(this).addClass('active');
     });
-
+    
+    $(".see-more").click(function() {        
+	    $(this).closest('.camp-summary__item').toggleClass("open");
+    });
+    
+    $(".safari-itinerary__item p.heading").click(function() {        
+        $(".safari-itinerary__item.open").removeClass("open");
+	    $(this).closest('.safari-itinerary__item').toggleClass("open");
+    });
+    $(".safari-itinerary__item:first-child").addClass("open");
+    
 // ========== Add class if in viewport on page load
 
 	$.fn.isOnScreen = function(){
@@ -147,15 +157,12 @@ jQuery(document).ready(function( $ ) {
 
 var action = false, clicked = false;
 var Owl = {
-
     init: function() {
       Owl.carousel();
     },
-
 	carousel: function() {
 		var owl;
 		$(document).ready(function() {
-			
 			owl = $('.tabs').owlCarousel({
 				items 	 : 1,
 				center	   : true, 
@@ -166,24 +173,50 @@ var Owl = {
 				dotsContainer: '.test',
 				navText: ['prev','next'],
 			});
-
 			  $('.owl-next').on('click',function(){
 			  	action = 'next';
 			  });
-
 			  $('.owl-prev').on('click',function(){
 			  	action = 'prev';
 			  });
-
 			 $('.tabs-header').on('click', 'li', function(e) {
 			    owl.trigger('to.owl.carousel', [$(this).index(), 300]);
 			  });
 		});
 	}
 };
-
 $(document).ready(function() {
   Owl.init();
+});
+
+/***********HERO SLIDER***********/
+var slideCount = $('#slider ul li').length;
+var slideWidth = $('#slider ul li').width();
+var slideHeight = $('#slider ul li').height();
+var sliderUlWidth = slideCount * slideWidth;
+$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+$('#slider ul li:last-child').prependTo('#slider ul');
+function moveLeft() {
+    $('#slider ul').animate({
+        left: + slideWidth
+    }, 500, function () {
+        $('#slider ul li:last-child').prependTo('#slider ul');
+        $('#slider ul').css('left', '');
+    });
+};
+function moveRight() {
+    $('#slider ul').animate({
+        left: - slideWidth
+    }, 500, function () {
+        $('#slider ul li:first-child').appendTo('#slider ul');
+        $('#slider ul').css('left', '');
+    });
+};
+$('a.control_prev').click(function () {
+    moveLeft();
+});
+$('a.control_next').click(function () {
+    moveRight();
 });
 
 });//Don't remove ---- end of jQuery wrapper

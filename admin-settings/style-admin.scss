@@ -7,7 +7,7 @@ body {
 #adminmenuback,
 #adminmenuwrap,
 #wpadminbar {
-	background-color: #362b3a
+	background-color: #362b3a 
 }
 
 #adminmenu .wp-has-current-submenu .wp-submenu,
@@ -89,7 +89,7 @@ ul#adminmenu>li.current>a.current:after {
 	}
 
 	.acf-flexible-content {
-		
+		 
 		.layout {
 			background: hsl(32, 12%, 78%);
 			border: none;
@@ -107,9 +107,22 @@ ul#adminmenu>li.current>a.current:after {
 				color: hsl(0, 0%, 100%);
 			}
 		}
-		
+
 		.no-value-message {
 			color: hsl(0, 0%, 100%);
 		}
 	}
 }
+
+#poststuff .acf-label label {
+    background: hsla(284, 15%, 20%, 0.7);
+    color: white;
+    padding: 5px;
+}
+
+.taxonomy-company .form-field.term-description-wrap,
+.taxonomy-focus .form-field.term-description-wrap {
+    display: none;
+}
+
+

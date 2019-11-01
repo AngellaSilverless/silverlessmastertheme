@@ -29,7 +29,7 @@ if( get_field('hero_type') !== 'slider'):
                     </h2>
                 </div>   
                <div class="buttons">
-                   <a href="">Explore Now</a>
+                   <a href="#explore"  class="explore">Explore Now</a>
                    <a href="">Enquire</a>
                </div>
 		    </div>

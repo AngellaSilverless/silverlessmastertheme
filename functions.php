@@ -107,3 +107,44 @@ function oke_manage_admin_bar(){
 	global $wp_admin_bar;
 	$wp_admin_bar->remove_menu('comments');
 }
+
+/**= Add Custom Post Types and Taxonomies =**/
+
+require_once ('custom-taxonomies.php');
+require_once ('custom-post-types.php');
+
+/* ADD CUSTOM RESPONSIVE IMAGE SIZES
+================================================== */
+
+function aw_custom_responsive_image_sizes($sizes, $size) {
+  $width = $size[0];
+  // blog posts
+  if ( is_singular( 'post' ) ) {
+    // half width images - medium size
+    if ( $width === 600 ) {
+      return '(min-width: 768px) 322px, (min-width: 576px) 255px, calc( (100vw - 30px) / 2)';
+    }
+    // full width images - large size
+    if ( $width === 1024 ) {
+      return '(min-width: 768px) 642px, (min-width: 576px) 510px, calc(100vw - 30px)';
+    }
+    // default to return if condition is not met
+    return '(max-width: ' . $width . 'px) 100vw, ' . $width . 'px';
+  }
+  // default to return if condition is not met
+  return '(max-width: ' . $width . 'px) 100vw, ' . $width . 'px';
+}
+add_filter('wp_calculate_image_sizes', 'aw_custom_responsive_image_sizes', 10 , 2);
+
+ function manage_my_category_columns($columns)
+{
+ // only edit the columns on the current taxonomy
+ if ( !isset($_GET['taxonomy']) || $_GET['taxonomy'] != 'category' )
+ return $columns;
+ 
+ // unset the description columns
+ if ( $posts = $columns['description'] ){ unset($columns['description']); }
+ 
+ return $columns;
+}
+add_filter('manage_edit-category_columns','manage_my_category_columns');

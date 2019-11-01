@@ -86,10 +86,24 @@
     border: $brandBorderWidth $brandBorderColor $brandBorderStyle;
 }
 
+@mixin brandBorderLeft {
+    border-left: $brandBorderWidth $brandBorderColor $brandBorderStyle;
+}
+
 @mixin brandBorderRight {
     border-right: $brandBorderWidth $brandBorderColor $brandBorderStyle;
 }
 
 @mixin brandBorderBottom {
     border-bottom: $brandBorderWidth $brandBorderColor $brandBorderStyle;
+}
+
+@mixin brandBorderTop {
+    border-top: $brandBorderWidth $brandBorderColor $brandBorderStyle;
+}
+
+@mixin emphasisText {
+    font-size: 1.1em;
+    font-family: "mauritius", serif;
+    font-style: italic;    
 }

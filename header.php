@@ -38,7 +38,7 @@
             
                 <div class="col">
                     <div class="logo">
-                        <a href="https://x.com">
+                        <a href="<?php echo get_home_url(); ?>">
                             <?php get_template_part('inc/img/ode', 'logo-top');?>
                             <?php get_template_part('inc/img/ode', 'logo-bottom');?>
                         </a>

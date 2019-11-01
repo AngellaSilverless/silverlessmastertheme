@@ -6,15 +6,13 @@
  */
 get_header();?>
 
-<!-- ******************* Hero Content ******************* -->
+<!--HERO-->
 
 <?php get_template_part("template-parts/hero"); ?>
 
-<!-- ******************* Hero Content END ******************* -->
-
 <!--OVERVIEW-->
 
-<div class="container cols-offset3-18 boxed-content mt5">
+<div id="explore" class="container cols-offset3-18 boxed-content mt5">
     <?php if( have_rows('overview_block') ): 
     while( have_rows('overview_block') ): the_row(); ?>
     <div class="col content">
@@ -44,7 +42,7 @@ get_header();?>
                 <div class="leader__item">
                     <div class="image" style="background-image: url(<?php echo $leaderImage['url']; ?>);"></div>
                     <div class="content">
-                        <h3 class="heading heading__md">
+                         <h3 class="heading heading__md">
                            <sup>The</sup>
                            <?php the_sub_field('heading');?>
                         </h3>
@@ -85,10 +83,10 @@ get_header();?>
                 	<?php if( have_rows('slides') ): 
                     	$row = 1;
                     	while( have_rows('slides') ): the_row(); ?>
-            		<li class="tab-trigger <?php if($row == 1) {echo 'active';}?>" data="0"><?php the_sub_field('heading');?></li>
+            		<li class="tab-trigger <?php if($row == 1) {echo 'active';}?>" data="0">[ i ] <?php the_sub_field('heading');?></li>
                     <?php $row++; endwhile; endif;?>
             	</ul>
-            </div>
+            </div><!--tabs header-->
             <div class="tabs-body">
                 <div class="owl-carousel tabs">
                     <?php if( have_rows('slides') ): while( have_rows('slides') ): the_row();
@@ -104,19 +102,21 @@ get_header();?>
                                         <span>Read more about</span>
                                         <?php the_sub_field('button_text');?>
                                     </a>
-                                </div>
+                                </div><!--content-->
                                 <div class="col">
                                     <div class="image" style="background-image: url(<?php echo $optionsImage['url']; ?>);"></div>
+                                </div><!--image-->
+                            </div>
+                            <div class="container">
+                                <div class="col content border-top">
+                                    <h3 class="heading heading__sm heading__emphasis">Featured <?php the_sub_field('heading');?> safaris:</h3>
                                 </div>
                             </div>
                         </div>
                     <?php endwhile; endif;?>        
                 </div>
-            </div>
+            </div><!--tabs body-->
         </div><!--tabs-wrapper--> 
-    </div>
-    <div class="col content">
-        <h3 class="heading heading__sm">Featured XXXX safaris</h3>
     </div>
     <?php endwhile; endif;?><!--safari options block-->
 </div><!--safari options block-->
