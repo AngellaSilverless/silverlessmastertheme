@@ -7,7 +7,7 @@
 html {
 
 }
- 
+
 html,
 body {
     min-height: 100vh;
@@ -40,7 +40,7 @@ h3, .h3 {
     width:10px;
     background-color: white;
     z-index: 1000;
-    
+
     &__left-top {
         &:before {
             content:'';
@@ -50,11 +50,11 @@ h3, .h3 {
             background-color:white;
         }
     }
-    
+
     &__right-bottom {
         left:initial;
         right:0;
-        
+
         &:before {
             content:'';
             position: fixed;
@@ -65,19 +65,29 @@ h3, .h3 {
             background-color:white;
         }
     }
-    
+
 }
 
 main {
 	position: relative;
     min-height: 100vh;
+    /*&:before {
+        position: fixed;
+        content:'';
+        width:100%;
+        height:100%;
+        background: url("inc/img/contours.png");
+        background-repeat: repeat;
+        opacity: 0.2;
+        z-index: -1;
+    }*/
 }
 
 p {
     font-size: 1em;
-    font-weight: 200;  
+    font-weight: 200;
     line-height: 1.6em;
-    
+
     &.brand-font {
     font-size: 1.2em;
     font-family: $brand-font;
@@ -95,8 +105,8 @@ a {
     &:hover {
         text-decoration: none;
         color: $brand-dark-grey;
-    }  
-    
+    }
+
     i {
         line-height: 1.2em;
         vertical-align: bottom;
@@ -121,40 +131,40 @@ ul {
     font-weight: 300;
     color: $brand-primary;
     &__alt {
-        font-family: $supporting-font;        
+        font-family: $supporting-font;
     }
-    
+
     &__body {
         font-family: $body-font;
     }
-    
+
     &__caps {
         text-transform: uppercase;
     }
-    
+
     &__light {
         color: white;
     }
-    
+
     &__alt-color {
       color: $brand-primary-light;
     }
     &__emphasis {
         font-style: italic;
     }
-    
+
     &__seperator {
         position: relative;
         display: grid;
         grid-template-columns: 1fr auto 1fr;
-        width: 100%;       
+        width: 100%;
         overflow: hidden;
-        
+
         span {
             position: relative;
             grid-column: 2/3;
             padding: 0 1em;
-            
+
             &:before,
             &:after {
                 position: absolute;
@@ -165,33 +175,33 @@ ul {
                 background: $brand-mid-grey;
                 left:100%;
             }
-            
+
             &:after {
                 left:initial;
                 right:100%;
             }
-        } 
+        }
     }
-    
+
     &__xl {
         font-size: 4em;
     }
-    
-    &__lg {      
+
+    &__lg {
         font-size: 2.5em;
-    }  
-    
+    }
+
     &__md {
-        font-size: 1.5em;    
-    }   
-    
+        font-size: 1.5em;
+    }
+
     &__sm {
         font-size: 1.2em;
     }
-    
+
     &__xs {
-        font-size: 1em;        
-    }   
+        font-size: 1em;
+    }
     sup {
         vertical-align: text-top;
         font-style: italic;
@@ -201,9 +211,9 @@ ul {
     }
 }
 
-[type=button], 
-[type=reset], 
-[type=submit], 
+[type=button],
+[type=reset],
+[type=submit],
 button {
     -webkit-appearance: none;
     border: none;
@@ -232,33 +242,33 @@ header {
     z-index: 1000;
     transition: all 0.5s ease;
     padding-left: 1em;
-    padding-right: 1em;    
+    padding-right: 1em;
     a {
         color: white;
     }
-    
+
     .logo {
         position: relative;
         display: inline-block;
         height: 100%;
         width: 100%;
         z-index: 999;
-        
+
         a {
             height: 100%;
             width: 100%;
             padding:1em 1.5em 1em 0;
         }
     }
-    
+
     svg {
         position: relative;
         display: block;
         width:100%;
         overflow: hidden;
         margin-top:0;
-        transition: margin-top 0.5s ease;        
-        
+        transition: margin-top 0.5s ease;
+
         &:first-of-type {
             width:65%;
             margin-bottom: 0.5em;
@@ -272,7 +282,7 @@ header {
             transition: opacity 0.5s ease, max-height 0.5s ease;
             opacity:1;
         }
-        
+
         .st0 {
             fill:white;
         }
@@ -287,7 +297,7 @@ header {
         border-right: 1px solid white;
         text-align: right;
         transition: padding-top 1s ease;
-        
+
         a:nth-of-type(2) {
             align-self: flex-end;
             padding-bottom: 0.25em;
@@ -304,7 +314,7 @@ header {
         padding-left:1em;
         padding-right: 1em;
     }
-    
+
 }
 
 nav {
@@ -315,12 +325,12 @@ nav {
 	margin:1em 0;
 	border-left: 1px solid white;
 	border-right: 1px solid white;
-	
+
 	.menu-trigger {
 		cursor: pointer;
 		font-size: 2em;
 		text-shadow: -1px -1px 2px rgba(0, 0, 0, 0.1), 1px -1px 2px rgba(0, 0, 0, 0.1), -1px 1px 2px rgba(0, 0, 0, 0.1), 1px 1px 2px rgba(0, 0, 0, 0.1);
-		
+
 		.title {
 			display: inline-block;
 			padding-left: 0.5em;
@@ -338,13 +348,13 @@ nav {
 		margin:0;
 		font-weight: 100;
 		letter-spacing: 1px;
-	
+
 		li {
     		position: relative;
     		display: inline-block;
 			padding:0;
 			color: white;
-		
+
 			a {
 			    display: block;
 			    padding: 0;
@@ -354,7 +364,7 @@ nav {
 				text-transform: uppercase;
 				font-weight: 600;
 			}
-			
+
 			&.current-menu-item:before {
                 position: absolute;
                 content: '';
@@ -370,7 +380,7 @@ nav {
                 transition: transform 1s ease;
                 transition-delay: 0.3s;
 			}
-			
+
 			&.loaded::before {
 				transform: scaleX(1);
 			}
@@ -383,10 +393,10 @@ nav {
 
         ul {
         justify-content: flex-start;
-    
+
         li {
             margin-right: 3em;
-            
+
             a {
                 font-weight: 100;
                 text-transform: none;
@@ -402,7 +412,7 @@ nav {
     width:100%;
     text-align: center;
     z-index: 100;
-    
+
     .st2 {
         display: none;
     }
@@ -433,7 +443,7 @@ nav {
 		justify-content: center;
 		border-radius: 100%;
 		margin-left: 0.2em;
-		
+
 		&.current {
 			background: $brand-mid-grey;
 		}
@@ -473,56 +483,56 @@ nav {
 /*===========FOOTER==========*/
 
 footer {
-		
+
 	a {
 		color: $brand-tertiary;
-		
+
 		&:hover {
 			color: white;
 		}
 	}
-	
+
 	.pre-socket {
 		padding: 2em 1em;
 		background: $brand-primary;
 		color: $brand-tertiary;
-		
+
 		.socials a {
 		    color: $brand-light-grey;
-		
+
 			&:hover {
 				color: white;
 			}
-		    
+
 		    &:not(:first-child) {
 			    margin-left: 1em;
 		    }
 		}
 	}
-	
+
 	.socket {
 		letter-spacing: 1px;
 		background: $brand-primary;
 		color: white;
 		padding: 1em;
-		
+
 		a {
     		color: white;
 		}
-		
+
 		.colophon, .mandatory {
 			font-size: 0.9em;
 			display: flex;
 			align-items: center;
 		}
-		
+
 		.colophon {
 			justify-content: flex-start;
 		}
-		
+
 		.mandatory {
 			justify-content: flex-end;
-			
+
 			.divider {
 				margin-right: 0.5em;
 				margin-left: 0.5em;

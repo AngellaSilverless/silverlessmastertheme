@@ -23,7 +23,7 @@ while ( have_posts() ): the_post(); ?>
             </ul>
         </div>
         <h4 class="heading heading__xs heading__light heading__caps mb1">Safaris Featuring This Property:</h4>
-<?php $current_id = get_the_ID(); 
+<?php $current_id = get_the_ID();
 // filter to allow query of acf sub field
 function my_posts_where( $where ) {
 	$where = str_replace("meta_key = 'daily_activity_$", "meta_key LIKE 'daily_activity_%", $where);
@@ -55,18 +55,18 @@ $the_query = new WP_Query( $args );?>
         </div><!--meta-->
         <div class="camps">
             <?php $safari_id = get_the_ID();
-            if( get_field('daily_activity', $safari_id) ) { while(has_sub_field('daily_activity', $safari_id)) { 
+            if( get_field('daily_activity', $safari_id) ) { while(has_sub_field('daily_activity', $safari_id)) {
                 $post_objects = get_sub_field('daily_camp', $safari_id);
                 if( $post_objects ):
                     $post = $post_objects;
                     setup_postdata( $post ); ?>
                     <div class="camps__item"><?php the_title(); ?></div>
-                <?php wp_reset_postdata(); 
+                <?php wp_reset_postdata();
             endif; }} ?>
         </div>
         <a href="<?php the_permalink($safari_id); ?>" class="button">View Safari</a>
     </div>
-<?php endwhile; endif; 
+<?php endwhile; endif;
 	wp_reset_query();	 ?>
         </div>
     </div>
@@ -80,7 +80,7 @@ $the_query = new WP_Query( $args );?>
         <?php if( $custom_terms ){
         // going to hold our tax_query params
         $tax_query = array();
-        // add the relationship parameter 
+        // add the relationship parameter
         if( $custom_terms )
         $tax_query['relation'] = 'OR' ;
         // loop through companies to build a tax query
@@ -102,25 +102,25 @@ $the_query = new WP_Query( $args );?>
         $loop = new WP_Query($args);
         // loop output
         if( $loop->have_posts() ) {
-        while( $loop->have_posts() ) : $loop->the_post(); 
+        while( $loop->have_posts() ) : $loop->the_post();
         $campImage = get_field('banner_image'); ?>
             <div class="col">
                 <div class="listing-item">
                     <div class="image" style="background:url(<?php echo $campImage['url']; ?>);">
                         <h2 class="heading heading__sm heading__light"><?php the_title(); ?>
                     </div>
-                    <div class="item"><i class="fas fa-credit-card"></i>From $<?php the_field('cost');?></div>    
+                    <div class="item"><i class="fas fa-credit-card"></i>From $<?php the_field('cost');?></div>
                     <div class="item"><i class="fas fa-map-marker-alt"></i><?php the_terms( $post->ID, 'destinations'); ?></div>
                     <!--<?php the_terms( $post->ID, 'company'); ?>-->
                     <div class="item"><?php the_field('short_description');?></div>
                     <a href="<?php the_permalink(); ?>">Learn More</a>
-                </div>    
+                </div>
             </div>
         <?php endwhile;}
         wp_reset_query();
         }?>
-        </div> 
-    </div>   
+        </div>
+    </div>
 </div>
-<?php endwhile; 
+<?php endwhile;
 get_footer();?>

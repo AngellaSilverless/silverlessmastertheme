@@ -4,7 +4,7 @@
     @include backgroundCover;
     display: grid;
     padding:10em 0 0;
-    
+
     svg {
         width:55%;
         &:nth-of-type(1) {
@@ -13,30 +13,30 @@
         }
         path {
             fill:white;
-            
+
         }
     }
-    
+
     .container {
         display: grid;
         align-content: flex-end;
         height: 100%;
         color: white;
     }
-    
+
     &__content {
 
         .inner-section {
             padding: 2em 3em;
             border: 1px solid white;
             border-bottom: none;
-            background: hsla(0, 0%, 17%, 0.1);
-            
+            background: rgba(0, 0, 0, 0.25);
+
             &:nth-of-type(3) {
                 border-bottom: 1px solid white;
             }
         }
-        
+
         .buttons {
             display: grid;
             grid-template-rows:1fr;
@@ -44,17 +44,17 @@
             grid-column-gap: 1em;
             margin-top:1em;
             margin-bottom: 60px;
-            
+
             a {
                 position: relative;
                 padding: 0.75em 2em;
                 text-transform: uppercase;
                 border: 1px solid white;
-                background: hsla(0, 0%, 100%, 0.2);           
+                background: rgba(0, 0, 0, 0.25);
                 font-size: 1.2em;
-                color: white;     
+                color: white;
             }
-            
+
             a:first-of-type {
                 &:before {
                     content:'';
@@ -68,7 +68,7 @@
                     border-left:1px solid white;
                     border-bottom:1px solid white;
                 }
-                
+
                 &:after {
                     content:'';
                     position: absolute;
@@ -77,9 +77,9 @@
                     height:52px;
                     width:1px;
                     background:white;
-                }   
+                }
             }
-            
+
             a:last-of-type {
                 background:$brand-secondary;
             }
@@ -94,15 +94,15 @@
 }
 
 .carousel {
-    
+
     &__item {
-        @include backgroundCover; 
-        position: relative;         
+        @include backgroundCover;
+        position: relative;
         height: 100%;
         display: grid;
         align-content: flex-end;
         padding-bottom: 10%;
-    }  
+    }
 }
 
 .owl-stage {
@@ -115,21 +115,21 @@
 	top: 50%;
 	width: 100%;
 	z-index: 1;
-	
+
 	.owl-prev, .owl-next {
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
 		transition: filter 0.3s ease;
-		
+
 		span {
 			display: none;
 		}
-		
+
 		&:focus {
 			outline: none;
 		}
-		
+
 		&:before {
 			content: "";
 			background: url("inc/img/arrow-shape.svg");
@@ -139,24 +139,24 @@
 			height: 2em;
 			cursor: pointer;
 		}
-		
+
 		&:hover {
 			filter: brightness(70%);
 		}
 	}
-	
+
 	.owl-prev {
 		left: 0;
-		
+
 		&:before {
 			right: 2em;
 			transform: translateY(-50%) rotate(90deg);
 		}
 	}
-	
+
 	.owl-next {
 		right: 0;
-		
+
 		&:before {
 			left: 2em;
 			transform: translateY(-50%) rotate(-90deg);
